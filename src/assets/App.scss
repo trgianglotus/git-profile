@@ -1,0 +1,13 @@
+.container {
+  padding: 5em 5em 5em 5em;
+  word-wrap: break-word;
+  .quick-report {
+    padding: 2em 0 1em 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 5em 2em 5em 2em;
+  }
+}
