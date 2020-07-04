@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { Input, Typography, Tabs } from "antd";
+import { Input, Tabs } from "antd";
 import { GithubOutlined } from "@ant-design/icons";
 
 import { getRepos } from "./actions/repoActions";
@@ -10,7 +10,6 @@ import Repos from "./components/Repos";
 import Overview from "./components/Overview";
 
 const { Search } = Input;
-const { Title } = Typography;
 const { TabPane } = Tabs;
 
 const App = (props) => {
@@ -26,9 +25,14 @@ const App = (props) => {
 
   return (
     <div className="container">
-      <div>
-        <Title>Git stats</Title>
-        <a>
+      <div className="header">
+        <p className="title">Git stats</p>
+        <a
+          href="https://github.com/trgianglotus/perx-react-interview"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="git"
+        >
           <GithubOutlined />
         </a>
       </div>

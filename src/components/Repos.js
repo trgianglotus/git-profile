@@ -11,7 +11,11 @@ const columns = [
     title: "URL",
     dataIndex: "html_url",
     render: (text, row, index) => {
-      return <a href={text}>{text}</a>;
+      return (
+        <a target="_blank" rel="noopener noreferrer" href={text}>
+          {text}
+        </a>
+      );
     },
   },
   { title: "Created At", dataIndex: "created_at" },
@@ -24,7 +28,7 @@ const Repos = (props) => {
       <Table
         columns={columns}
         dataSource={props.repos.repos}
-        pagination={{ pageSize: 20 }}
+        pagination={{ pageSize: 10 }}
       />
     </>
   );

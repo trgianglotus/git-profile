@@ -1,6 +1,23 @@
 .container {
-  padding: 5em 5em 5em 5em;
+  padding: 2em 5em 5em 5em;
   word-wrap: break-word;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .title {
+      font-size: 4em;
+      margin: 0;
+    }
+
+    .git {
+      font-size: 3em;
+      color: rgb(109, 108, 108);
+    }
+  }
+
   .quick-report {
     padding: 2em 0 1em 0;
   }
@@ -8,6 +25,6 @@
 
 @media screen and (max-width: 768px) {
   .container {
-    padding: 5em 2em 5em 2em;
+    padding: 2em 2em 5em 2em;
   }
 }
