@@ -6,18 +6,20 @@ const columns = [
   {
     title: "Name",
     dataIndex: "name",
-  },
-  {
-    title: "URL",
-    dataIndex: "html_url",
     render: (text, row, index) => {
       return (
-        <a target="_blank" rel="noopener noreferrer" href={text}>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href={row.html_url}
+          key={row.id}
+        >
           {text}
         </a>
       );
     },
   },
+  { title: "Description", dataIndex: "description", ellipsis: true },
   { title: "Created At", dataIndex: "created_at" },
   { title: "Language", dataIndex: "language" },
 ];
@@ -28,7 +30,11 @@ const Repos = (props) => {
       <Table
         columns={columns}
         dataSource={props.repos.repos}
-        pagination={{ pageSize: 10 }}
+        pagination={{
+          pageSize: 10,
+          position: ["bottomCenter"],
+          hideOnSinglePage: true,
+        }}
       />
     </>
   );
