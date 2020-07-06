@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Table } from "antd";
+import { Table, Tag, Tooltip } from "antd";
 
 const columns = [
   {
@@ -19,9 +19,29 @@ const columns = [
       );
     },
   },
-  { title: "Description", dataIndex: "description", ellipsis: true },
+  {
+    title: "Description",
+    dataIndex: "description",
+    ellipsis: {
+      showTitle: false,
+    },
+    render: (text) => (
+      <Tooltip placement="topLeft" title={text}>
+        {text}
+      </Tooltip>
+    ),
+  },
   { title: "Created At", dataIndex: "created_at" },
-  { title: "Language", dataIndex: "language" },
+  {
+    title: "Language",
+    dataIndex: "language",
+    render: (text, row, index) => (
+      <Tag color="blue" key={row.id}>
+        {text}
+      </Tag>
+    ),
+    align: "center",
+  },
 ];
 
 const Repos = (props) => {

@@ -26,7 +26,7 @@ const App = (props) => {
   return (
     <div className="container">
       <div className="header">
-        <p className="title">Git stats</p>
+        <p className="title">Git profile</p>
         <a
           href="https://github.com/trgianglotus/perx-react-interview"
           target="_blank"
@@ -38,6 +38,7 @@ const App = (props) => {
       </div>
 
       <Search
+        placeholder="ben"
         size="large"
         loading={false}
         enterButton
@@ -47,7 +48,9 @@ const App = (props) => {
         }}
       />
       {username ? (
-        <div className="quick-report">Git stats for "{username}"</div>
+        <div className="quick-report">
+          Showing public profile of "{username}"
+        </div>
       ) : (
         ""
       )}

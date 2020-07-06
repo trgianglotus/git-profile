@@ -1,20 +1,36 @@
 import { Octokit } from "@octokit/core";
 import { GET_ORGS } from "./types";
+import request from "request";
 
 export const getOrgs = (username) => (dispatch) => {
   const octokit = new Octokit();
-  //   dispatch({ type: SET_LOADING_ON });
   octokit
     .request("GET /users/{username}/orgs", {
       username: username,
     })
-    .then((res) => {
-      console.log(res.data);
+    .then(async (res) => {
+      const promises = [];
+      let orgs = [];
+
+      res.data.forEach((org, index) => {
+        promises.push(
+          new Promise((resolve, reject) => {
+            request(`https://api.github.com/orgs/${org.login}`, function (
+              error,
+              response,
+              body
+            ) {
+              if (error) reject(error);
+              else resolve(JSON.parse(body));
+            });
+          })
+        );
+      });
+      orgs = await Promise.all(promises);
       dispatch({
         type: GET_ORGS,
-        payload: res.data,
+        payload: orgs,
       });
-      //   dispatch({ type: SET_LOADING_OFF });
     })
     .catch((err) => {
       console.log("err");
