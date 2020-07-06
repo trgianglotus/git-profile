@@ -1,6 +1,6 @@
 # Getting started
 
-Live demo: https://git-proflile.herokuapp.com/
+Live demo: https://git-profile.herokuapp.com/
 
 Run locally:
 
