@@ -26,6 +26,7 @@ export const getOrgs = (username) => (dispatch) => {
           })
         );
       });
+
       orgs = await Promise.all(promises);
       dispatch({
         type: GET_ORGS,

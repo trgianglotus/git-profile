@@ -38,7 +38,7 @@ const App = (props) => {
       </div>
 
       <Search
-        placeholder="ben"
+        placeholder="Nick"
         size="large"
         loading={false}
         enterButton
@@ -56,9 +56,9 @@ const App = (props) => {
       )}
 
       <Tabs defaultActiveKey="1">
-        <TabPane tab="Overview" key="1">
+        {/* <TabPane tab="Overview" key="1">
           <Overview />
-        </TabPane>
+        </TabPane> */}
         <TabPane tab="Repositories" key="2">
           <Repos />
         </TabPane>

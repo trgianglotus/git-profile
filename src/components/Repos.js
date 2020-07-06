@@ -4,16 +4,11 @@ import { Table, Tag, Tooltip } from "antd";
 
 const columns = [
   {
-    title: "Name",
+    title: "Repository",
     dataIndex: "name",
     render: (text, row, index) => {
       return (
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href={row.html_url}
-          key={row.id}
-        >
+        <a target="_blank" rel="noopener noreferrer" href={row.html_url}>
           {text}
         </a>
       );
@@ -31,15 +26,31 @@ const columns = [
       </Tooltip>
     ),
   },
-  { title: "Created At", dataIndex: "created_at" },
+  {
+    title: "Created At",
+    dataIndex: "created_at",
+    render: (text, row, index) => {
+      const date = new Date(text);
+      const dateTimeFormat = new Intl.DateTimeFormat("en", {
+        year: "numeric",
+        month: "short",
+        day: "2-digit",
+      });
+      const [
+        { value: month },
+        ,
+        { value: day },
+        ,
+        { value: year },
+      ] = dateTimeFormat.formatToParts(date);
+      return <p>{`${day}-${month}-${year}`}</p>;
+    },
+    align: "center",
+  },
   {
     title: "Language",
     dataIndex: "language",
-    render: (text, row, index) => (
-      <Tag color="blue" key={row.id}>
-        {text}
-      </Tag>
-    ),
+    render: (text, row, index) => <Tag color="blue">{text}</Tag>,
     align: "center",
   },
 ];
@@ -47,9 +58,11 @@ const columns = [
 const Repos = (props) => {
   return (
     <>
+      <h1>Repositories</h1>
       <Table
+        rowKey="id"
         columns={columns}
-        dataSource={props.repos.repos}
+        dataSource={props.repos}
         pagination={{
           pageSize: 10,
           position: ["bottomCenter"],

@@ -9,13 +9,8 @@ const columns = [
     render: (text, row, index) => {
       return (
         <div>
-          <Avatar key={row.id} src={row.avatar_url} className="org-avatar" />
-          <a
-            key={row.id}
-            target="_blank"
-            rel="noopener noreferrer"
-            href={row.html_url}
-          >
+          <Avatar src={row.avatar_url} className="org-avatar" />
+          <a target="_blank" rel="noopener noreferrer" href={row.html_url}>
             {text}
           </a>
         </div>
@@ -34,13 +29,15 @@ const columns = [
       </Tooltip>
     ),
   },
+  { title: "Email", dataIndex: "email" },
+
   {
     title: "Repositories",
     dataIndex: "repos_url",
     align: "center",
     render: (text, row, index) => {
       return (
-        <a key={row.id} target="_blank" rel="noopener noreferrer" href={text}>
+        <a target="_blank" rel="noopener noreferrer" href={text}>
           {row.public_repos}
         </a>
       );
@@ -53,9 +50,9 @@ const Orgs = (props) => {
     <>
       <h1>Organizations</h1>
       <Table
-        key
+        rowKey="id"
         columns={columns}
-        dataSource={props.orgs.orgs}
+        dataSource={props.orgs}
         pagination={{
           pageSize: 10,
           position: ["bottomCenter"],

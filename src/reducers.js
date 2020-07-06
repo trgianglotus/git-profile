@@ -1,13 +1,20 @@
-import { GET_REPOS } from "../actions/types";
+import { GET_ORGS, GET_REPOS } from "./actions/types";
 
 const initialState = {
+  orgs: [],
   repos: [],
 };
 
 export default function (state = initialState, action) {
   switch (action.type) {
+    case GET_ORGS:
+      return {
+        ...state,
+        orgs: action.payload,
+      };
     case GET_REPOS:
       return {
+        ...state,
         repos: action.payload,
       };
     default:
