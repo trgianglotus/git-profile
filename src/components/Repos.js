@@ -27,7 +27,7 @@ const columns = [
     ),
   },
   {
-    title: "Created At",
+    title: "Created On",
     dataIndex: "created_at",
     render: (text, row, index) => {
       const date = new Date(text);
@@ -50,7 +50,7 @@ const columns = [
   {
     title: "Language",
     dataIndex: "language",
-    render: (text, row, index) => <Tag color="blue">{text}</Tag>,
+    render: (text, row, index) => (text ? <Tag color="blue">{text}</Tag> : ""),
     align: "center",
   },
 ];
