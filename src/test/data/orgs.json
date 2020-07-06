@@ -1,0 +1,30 @@
+[
+  {
+    "login": "progit",
+    "id": 95588,
+    "node_id": "MDEyOk9yZ2FuaXphdGlvbjk1NTg4",
+    "url": "https://api.github.com/orgs/progit",
+    "repos_url": "https://api.github.com/orgs/progit/repos",
+    "events_url": "https://api.github.com/orgs/progit/events",
+    "hooks_url": "https://api.github.com/orgs/progit/hooks",
+    "issues_url": "https://api.github.com/orgs/progit/issues",
+    "members_url": "https://api.github.com/orgs/progit/members{/member}",
+    "public_members_url": "https://api.github.com/orgs/progit/public_members{/member}",
+    "avatar_url": "https://avatars2.githubusercontent.com/u/95588?v=4",
+    "description": null
+  },
+  {
+    "login": "libgit2",
+    "id": 394745,
+    "node_id": "MDEyOk9yZ2FuaXphdGlvbjM5NDc0NQ==",
+    "url": "https://api.github.com/orgs/libgit2",
+    "repos_url": "https://api.github.com/orgs/libgit2/repos",
+    "events_url": "https://api.github.com/orgs/libgit2/events",
+    "hooks_url": "https://api.github.com/orgs/libgit2/hooks",
+    "issues_url": "https://api.github.com/orgs/libgit2/issues",
+    "members_url": "https://api.github.com/orgs/libgit2/members{/member}",
+    "public_members_url": "https://api.github.com/orgs/libgit2/public_members{/member}",
+    "avatar_url": "https://avatars1.githubusercontent.com/u/394745?v=4",
+    "description": "A portable, pure C implementation of the Git core methods provided as a re-entrant linkable library with a solid API."
+  }
+]

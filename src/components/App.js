@@ -47,7 +47,7 @@ const App = (props) => {
       />
       {username ? (
         <div className="quick-report">
-          Showing public profile of "{username}"
+          {props.error ? props.error : `Showing public profile of ${username}`}
         </div>
       ) : (
         ""
@@ -65,6 +65,10 @@ const App = (props) => {
   );
 };
 
+const mapStateToProps = (state) => ({
+  error: state.error,
+});
+
 const mapDispatchToProps = { getRepos, getOrgs };
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

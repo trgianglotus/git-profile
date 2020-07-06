@@ -1,5 +1,5 @@
 import { Octokit } from "@octokit/core";
-import { GET_ORGS, GET_REPOS } from "./types";
+import { GET_ORGS, GET_REPOS, GET_ERROR } from "./types";
 import { createOrgPromise } from "./utils/actions";
 
 export const getOrgs = (username) => (dispatch) => {
@@ -22,13 +22,17 @@ export const getOrgs = (username) => (dispatch) => {
     })
     .catch((err) => {
       console.log("err");
+      dispatch({
+        type: GET_ERROR,
+        payload: "Profile doesn't exist",
+      });
     });
 };
 
 export const getRepos = (username) => (dispatch) => {
   const octokit = new Octokit();
   octokit
-    .request("GET /users/{username}/repos", {
+    .request("GET /users/{username}/repos?per_page=100", {
       username: username,
     })
     .then((res) => {
@@ -39,5 +43,9 @@ export const getRepos = (username) => (dispatch) => {
     })
     .catch((err) => {
       console.log("err");
+      dispatch({
+        type: GET_ERROR,
+        payload: "Profile doesn't exist",
+      });
     });
 };

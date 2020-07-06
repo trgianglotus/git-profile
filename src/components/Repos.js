@@ -55,6 +55,7 @@ const Repos = (props) => {
           pageSize: 10,
           position: ["bottomCenter"],
           hideOnSinglePage: true,
+          showSizeChanger: false,
         }}
       />
     </>
