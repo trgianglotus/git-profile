@@ -7,7 +7,7 @@ import { getRepos } from "./actions/repoActions";
 import { getOrgs } from "./actions/orgActions";
 import Orgs from "./components/Orgs";
 import Repos from "./components/Repos";
-import Overview from "./components/Overview";
+// import Overview from "./components/Overview";
 
 const { Search } = Input;
 const { TabPane } = Tabs;
