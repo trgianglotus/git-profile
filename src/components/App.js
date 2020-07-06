@@ -3,8 +3,7 @@ import { connect } from "react-redux";
 import { Input, Tabs } from "antd";
 import { GithubOutlined } from "@ant-design/icons";
 
-import { getRepos } from "../actions/repoActions";
-import { getOrgs } from "../actions/orgActions";
+import { getOrgs, getRepos } from "../actions.js";
 import Orgs from "./Orgs";
 import Repos from "./Repos";
 

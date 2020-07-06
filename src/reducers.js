@@ -1,4 +1,4 @@
-import { GET_ORGS, GET_REPOS } from "./actions/types";
+import { GET_ORGS, GET_REPOS } from "./types";
 
 const initialState = {
   orgs: [],
