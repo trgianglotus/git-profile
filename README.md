@@ -21,7 +21,7 @@ $ yarn start
 
 ## 1. Objectives
 
-https://github.com/trgianglotus/perx-react-interview
+https://github.com/PerxTech/react-interview
 
 ## 2. Scope
 

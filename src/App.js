@@ -38,7 +38,7 @@ const App = (props) => {
       </div>
 
       <Search
-        placeholder="Nick"
+        placeholder="khzaw"
         size="large"
         loading={false}
         enterButton
