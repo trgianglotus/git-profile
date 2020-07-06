@@ -21,7 +21,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "mocha",
+    "test": "mocha -r esm --recursive src/test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -41,6 +41,7 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
+    "esm": "^3.2.25",
     "mocha": "^8.0.1",
     "redux-devtools-extension": "^2.13.8"
   }

@@ -31,14 +31,7 @@ const columns = [
     title: "Created On",
     dataIndex: "created_at",
     render: (text) => {
-      const [
-        { value: month },
-        ,
-        { value: day },
-        ,
-        { value: year },
-      ] = formatDate(text);
-      return <p>{`${day}-${month}-${year}`}</p>;
+      return <p>{formatDate(text)}</p>;
     },
     align: "center",
   },
