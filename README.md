@@ -31,7 +31,7 @@ https://github.com/PerxTech/react-interview
 
 ## 2. Scope
 
-Prototype
+Prototype, Desktop
 
 > Git Profile only shows public info, accessing private info will require authentication which is assumed to be irrelevant.
 
