@@ -22,7 +22,7 @@ yarn test
 1. Objectives
 2. Scope
 3. Technologies
-4. Tests
+4. Testing
 5. Deployment
 
 ## 1. Objectives
