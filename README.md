@@ -14,7 +14,7 @@ $ yarn
 $ yarn start
 
 # Run tests
-yarn test
+$ yarn test
 ```
 
 # Project plan
