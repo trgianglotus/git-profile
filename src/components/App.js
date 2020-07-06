@@ -3,10 +3,10 @@ import { connect } from "react-redux";
 import { Input, Tabs } from "antd";
 import { GithubOutlined } from "@ant-design/icons";
 
-import { getRepos } from "./actions/repoActions";
-import { getOrgs } from "./actions/orgActions";
-import Orgs from "./components/Orgs";
-import Repos from "./components/Repos";
+import { getRepos } from "../actions/repoActions";
+import { getOrgs } from "../actions/orgActions";
+import Orgs from "./Orgs";
+import Repos from "./Repos";
 
 // import Overview from "./components/Overview";
 
