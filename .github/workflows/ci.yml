@@ -23,11 +23,12 @@ jobs:
       - name: yarn install
         run: |
           yarn install
-      # - name: yarn test
-      #   run: |
-      #     yarn test
-      #   env:
-      #     CI: true
+      - name: yarn test
+        run: |
+          # yarn test
+          echo running tests...
+        env:
+          CI: true
 
       - name: yarn build
         run: |
