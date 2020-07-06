@@ -7,8 +7,6 @@ import { getOrgs, getRepos } from "../actions.js";
 import Orgs from "./Orgs";
 import Repos from "./Repos";
 
-// import Overview from "./components/Overview";
-
 const { Search } = Input;
 const { TabPane } = Tabs;
 
@@ -56,13 +54,10 @@ const App = (props) => {
       )}
 
       <Tabs defaultActiveKey="1">
-        {/* <TabPane tab="Overview" key="1">
-          <Overview />
-        </TabPane> */}
-        <TabPane tab="Repositories" key="2">
+        <TabPane tab="Repositories" key="1">
           <Repos />
         </TabPane>
-        <TabPane tab="Organizations" key="3">
+        <TabPane tab="Organizations" key="2">
           <Orgs />
         </TabPane>
       </Tabs>
