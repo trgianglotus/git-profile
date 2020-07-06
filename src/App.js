@@ -7,6 +7,7 @@ import { getRepos } from "./actions/repoActions";
 import { getOrgs } from "./actions/orgActions";
 import Orgs from "./components/Orgs";
 import Repos from "./components/Repos";
+
 // import Overview from "./components/Overview";
 
 const { Search } = Input;
@@ -70,11 +71,6 @@ const App = (props) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  repos: state.repos,
-  orgs: state.orgs,
-});
-
 const mapDispatchToProps = { getRepos, getOrgs };
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(App);

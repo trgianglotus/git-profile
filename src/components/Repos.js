@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Table, Tag, Tooltip } from "antd";
+import { formatDate } from "../utils/formatters";
 
 const columns = [
   {
@@ -29,20 +30,14 @@ const columns = [
   {
     title: "Created On",
     dataIndex: "created_at",
-    render: (text, row, index) => {
-      const date = new Date(text);
-      const dateTimeFormat = new Intl.DateTimeFormat("en", {
-        year: "numeric",
-        month: "short",
-        day: "2-digit",
-      });
+    render: (text) => {
       const [
         { value: month },
         ,
         { value: day },
         ,
         { value: year },
-      ] = dateTimeFormat.formatToParts(date);
+      ] = formatDate(text);
       return <p>{`${day}-${month}-${year}`}</p>;
     },
     align: "center",
@@ -50,7 +45,7 @@ const columns = [
   {
     title: "Language",
     dataIndex: "language",
-    render: (text, row, index) => (text ? <Tag color="blue">{text}</Tag> : ""),
+    render: (text) => (text ? <Tag color="blue">{text}</Tag> : ""),
     align: "center",
   },
 ];
